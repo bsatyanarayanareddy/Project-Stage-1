@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin-top: 10px;
+            background-color: rgb(246, 189, 104);
+            font-family: Arial, sans-serif;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+        }
+        ol {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+        #top {
+            border-radius: 10px;
+            background-color: rgb(144, 159, 171);
+            border: 2px solid rgb(246, 242, 242);
+            display: flex;
+            justify-content: space-between; /* left and right sides */
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .blo{
+            width: 200px;
+            height: 150px;
+            border-radius: 6px;
+            background-color: rgb(176, 173, 170);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .midp{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: 100px;
+
+        }
+        .midc{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            height: 200px;
+            border-radius: 6px;
+            background-color: aquamarine;
+            
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="top">
+        <ol>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Contact</a></li>
+        </ol>
+        <ol>
+            <li><a href="#">Profile</a></li>
+        </ol>
+    </div>
+    <div style="display: flex; justify-content:space-between; margin-top:20px">
+        <div class="blo">Current locaton</div>
+        <div class="blo">temperatre</div>
+        <div class="blo">weather condition</div>
+        <div class="blo">Humidity</div>
+        <div class="blo">Wind Speed</div>
+        <div class="blo">Pressure</div>
+    </div>
+    <div class="midp">
+        <div class="midc"><a href="">Crop Recommend</a></div>
+        <div class="midc"><a href="">Weather Insights</a></div>
+        <div class="midc"><a href="">Market Prices</a></div>
+        <div class="midc"><a href="">Water&Soil Info</a></div>
+        <div class="midc"><a href="">Feedback</a></div>
+        
+    </div>
+</body>
+</html>
