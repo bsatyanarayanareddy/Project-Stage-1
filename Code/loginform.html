@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            button{
+                font-size: 20px;
+                border-radius: 5px;
+                border: none;
+                cursor: pointer;
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div style="width: 50%; float: left;">
+                <div style="border: 2px solid red; display: flex; justify-content: space-around; width: 100%;">
+                <button onclick="login()">log in</button>
+                <button onclick="signup()">sign up</button>
+                </div>
+                <div id="log">
+                    <form action="" method="post">
+                        <p>login form </p>
+                        <label for="username">Username:</label><br>
+                        <input type="text" id="username" name="username"><br>
+                        <label for="password">Password:</label><br>
+                        <input type="password" id="password" name="password"><br><br>
+                        <input type="submit" value="Submit">
+                      </form>
+
+            </div>
+            <div id="sign" style="display: none;">
+                <form action="" method="post">
+                    <p>sign in form </p>
+                    <label for="newusername">Username:</label><br>
+                    <input type="text" id="newusername" name="newusername"><br>
+                    <label for="newpassword">Password:</label><br>
+                    <input type="password" id="newpassword" name="newpassword"><br><br>
+                    <input type="password" id="confirmpassword" name="confirmpassword" placeholder="confirm password"><br><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <div style="width: 50%; float:right"> </div>
+        </div>
+        <script>
+            function login(){
+                document.getElementById("log").style.display="block";
+                document.getElementById("sign").style.display="none";
+            }
+            function signup(){
+                document.getElementById("log").style.display="none";
+                document.getElementById("sign").style.display="block";
+            }
+        </script>
+    </body>
+</html>
