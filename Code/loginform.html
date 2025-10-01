@@ -2,56 +2,103 @@
 <html>
     <head>
         <style>
-            button{
-                font-size: 20px;
-                border-radius: 5px;
-                border: none;
-                cursor: pointer;
-                padding-left: 50px;
-                padding-right: 50px;
+            body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgb(43, 31, 179);
             }
+            .outer{
+                border-radius: 5px;
+                width: 500px;
+                height: 400px;
+                border: 2px solid rgb(229, 223, 223);
+                background-color: lightskyblue;
+                margin-top: 200px;
+            }
+            .top{
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                border: 2px solid rgb(249, 248, 248);
+                height: 50px;
+                border-radius: 5px;
+            }
+            .topbuttons{
+                border: 2px solid rgb(233, 224, 224);
+                width: 100px;
+                height: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 15px;
+                background-color: lightgrey;
+                cursor: pointer;
+            }
+            .down{
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                height: 550px;
+            }
+
         </style>
     </head>
     <body>
-        <div>
-            <div style="width: 50%; float: left;">
-                <div style="border: 2px solid red; display: flex; justify-content: space-around; width: 100%;">
-                <button onclick="login()">log in</button>
-                <button onclick="signup()">sign up</button>
-                </div>
-                <div id="log">
-                    <form action="" method="post">
-                        <p>login form </p>
-                        <label for="username">Username:</label><br>
-                        <input type="text" id="username" name="username"><br>
-                        <label for="password">Password:</label><br>
-                        <input type="password" id="password" name="password"><br><br>
-                        <input type="submit" value="Submit">
-                      </form>
-
+        <div class="outer">
+            <div class="top">
+                <div class="topbuttons" onclick="callog()">log in </div>
+                <div class="topbuttons" onclick="callsign()">sign up</div>
             </div>
-            <div id="sign" style="display: none;">
-                <form action="" method="post">
-                    <p>sign in form </p>
-                    <label for="newusername">Username:</label><br>
-                    <input type="text" id="newusername" name="newusername"><br>
-                    <label for="newpassword">Password:</label><br>
-                    <input type="password" id="newpassword" name="newpassword"><br><br>
-                    <input type="password" id="confirmpassword" name="confirmpassword" placeholder="confirm password"><br><br>
-                    <input type="submit" value="Submit">
+            <div class="down">
+                <form id="login" action="">
+                    <h1 style="text-align: center;">Log in form</h1>
+                    <label for="username" > username</label>
+                    <input type="text" id="username" name="username" placeholder="enter username" required> <br> <br>
+                    <label for="password" > password</label>
+                    <input type="password" id="password" name="password" placeholder="enter password" required> <br> <br>
+                    <a href="#">forgot password</a><br><br>
+                    <input type="submit"  value="Log in" onclick="login()">
+                </form>
+                <form id="signup" style="display: none;">
+                    <h1 style="text-align: center;">Sign up form</h1>
+                    <label for="newusername" > username</label>
+                    <input type="text" id="newusername" name="newusername" placeholder="enter username" required> <br> <br>
+                    <label for="email" > email </label>
+                    <input type="email" id="email" name="email" placeholder="enter email" required> <br> <br>
+                    <label for="newpassword" > password</label>
+                    <input type="password" id="newpassword" name="newpassword" placeholder="enter password" required> <br> <br>
+                    <label for="confirmpassword">confirm password</label>
+                    <input type="password" name="confirmpassword" id="confirmpassword" placeholder="confirm password" required> <br> <br>
+                    <input type="submit" value="Sign up">
+
                 </form>
             </div>
-        </div>
-        <div style="width: 50%; float:right"> </div>
+
         </div>
         <script>
-            function login(){
-                document.getElementById("log").style.display="block";
-                document.getElementById("sign").style.display="none";
+            function callog(){
+                
+                document.getElementById("login").style.display="block";
+                document.getElementById("signup").style.display="none";
             }
-            function signup(){
-                document.getElementById("log").style.display="none";
-                document.getElementById("sign").style.display="block";
+            function callsign(){
+                
+                document.getElementById("login").style.display="none";
+                document.getElementById("signup").style.display="block";
+            }
+            function login(){
+                const usernameInput = document.getElementById('username').value;
+                const passwordInput = document.getElementById('password').value;
+                if(usernameInput in localstorage){
+                    if(localStorage.getItem(usernameInput) === passwordInput){
+                        alert('login successful');
+                    } else {
+                        alert('incorrect password');
+                    }
+                } else {
+                    alert('username not found');
+                }
             }
         </script>
     </body>
